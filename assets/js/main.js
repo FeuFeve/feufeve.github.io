@@ -138,10 +138,10 @@
 $(function () {
 	$("#terogue").hover(
 		function () {
-			$(this).children(".image").children("img").attr("src", "images/nyan-cat-gif.gif");
+			$(this).children(".image").children("img").attr("src", "gifs/terogue-1.gif");
 		},
 		function () {
-			$(this).children(".image").children("img").attr("src", "images/terogue-logo.png");
+			$(this).children(".image").children("img").attr("src", "images/terogue-logo-2.png");
 		}
 	);
 });
