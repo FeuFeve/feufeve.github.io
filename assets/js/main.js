@@ -135,6 +135,7 @@
 })(jQuery);
 
 
+// INDEX: TERogue
 $(function () {
 	$("#terogue").hover(
 		function () {
@@ -142,6 +143,18 @@ $(function () {
 		},
 		function () {
 			$(this).children(".image").children("img").attr("src", "images/terogue-logo-2.png");
+		}
+	);
+});
+
+// INDEX: Video FPS Increase
+$(function () {
+	$("#video-fps-increase").hover(
+		function () {
+			$(this).children(".image").children("img").attr("src", "gifs/video-fps-increase-1.gif");
+		},
+		function () {
+			$(this).children(".image").children("img").attr("src", "images/video-fps-increase-logo.png");
 		}
 	);
 });
