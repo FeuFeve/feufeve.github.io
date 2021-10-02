@@ -123,15 +123,6 @@
 			// Hide on escape.
 			if (event.keyCode == 27) $menu._hide();
 		});
-
-	// $terogue
-	// 	.hover(
-	// 		function () {
-	// 			$(this).attr("src", "images/terogue-logo.png");
-	// 		},
-	// 		function () {
-	// 			$(this).attr("src", "images/nyan-cat-gif.gif");
-	// 		});
 })(jQuery);
 
 
@@ -149,12 +140,18 @@ $(function () {
 
 // INDEX: Video FPS Increase
 $(function () {
-	$("#video-fps-increase").hover(
+	var id = "video-fps-increase";
+	$("#" + id).hover(
 		function () {
-			$(this).children(".image").children("img").attr("src", "gifs/video-fps-increase-1.gif");
+			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
+			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3%;" autoplay="true" loop="true" mute="true" playsinline="true">' +
+				'<source src="videos/video-fps-increase-1.mp4" type="video/mp4">' +
+				'Your browser does not support the video tag.' +
+				'</video>';
 		},
 		function () {
-			$(this).children(".image").children("img").attr("src", "images/video-fps-increase-logo.png");
+			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
+			imageVideo.innerHTML = '<img src="images/video-fps-increase-logo.png" alt="" />';
 		}
 	);
 });
