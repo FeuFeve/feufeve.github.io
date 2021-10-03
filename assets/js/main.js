@@ -151,7 +151,19 @@ $(function () {
 		},
 		function () {
 			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
-			imageVideo.innerHTML = '<img src="images/video-fps-increase-logo.png" alt="" />';
+			imageVideo.innerHTML = '<img src="images/video-fps-increase-preview.png" alt="" />';
+		}
+	);
+});
+
+// INDEX: OpenGL Projects
+$(function () {
+	$("#opengl-projects").hover(
+		function () {
+			$(this).children(".image").children("img").attr("src", "gifs/solar-system-1.gif");
+		},
+		function () {
+			$(this).children(".image").children("img").attr("src", "images/solar-system-preview.png");
 		}
 	);
 });
