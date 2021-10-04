@@ -128,12 +128,17 @@
 
 // INDEX: TERogue
 $(function () {
-	$("#terogue").hover(
+	var id = "terogue";
+	$("#" + id).hover(
 		function () {
-			$(this).children(".image").children("img").attr("src", "gifs/terogue-1.gif");
+			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
+			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
+				'<source src="videos/terogue-1.mp4" type="video/mp4">' +
+				'</video>';
 		},
 		function () {
-			$(this).children(".image").children("img").attr("src", "images/terogue-logo-2.png");
+			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
+			imageVideo.innerHTML = '<img src="images/terogue-logo-2.png" alt="" />';
 		}
 	);
 });
@@ -144,9 +149,8 @@ $(function () {
 	$("#" + id).hover(
 		function () {
 			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
-			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3%;" autoplay="true" loop="true" mute="true" playsinline="true">' +
+			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
 				'<source src="videos/video-fps-increase-1.mp4" type="video/mp4">' +
-				'Your browser does not support the video tag.' +
 				'</video>';
 		},
 		function () {
@@ -158,12 +162,17 @@ $(function () {
 
 // INDEX: OpenGL Projects
 $(function () {
-	$("#opengl-projects").hover(
+	var id = "opengl-projects";
+	$("#" + id).hover(
 		function () {
-			$(this).children(".image").children("img").attr("src", "gifs/solar-system-1.gif");
+			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
+			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
+				'<source src="videos/solar-system-1.mp4" type="video/mp4">' +
+				'</video>';
 		},
 		function () {
-			$(this).children(".image").children("img").attr("src", "images/solar-system-preview.png");
+			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
+			imageVideo.innerHTML = '<img src="images/solar-system-preview.png" alt="" />';
 		}
 	);
 });
