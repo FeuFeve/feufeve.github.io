@@ -9,7 +9,6 @@
 		$body = $("body"),
 		$header = $("#header"),
 		$banner = $("#banner");
-	// $terogue = $("#terogue");
 
 	// Breakpoints.
 	breakpoints({
@@ -129,15 +128,14 @@
 // INDEX: TERogue
 $(function () {
 	var id = "terogue";
+	var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 	$("#" + id).hover(
 		function () {
-			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
 				'<source src="videos/terogue-1.mp4" type="video/mp4">' +
 				'</video>';
 		},
 		function () {
-			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 			imageVideo.innerHTML = '<img src="images/terogue-logo-2.png" alt="" />';
 		}
 	);
@@ -146,15 +144,14 @@ $(function () {
 // INDEX: Video FPS Increase
 $(function () {
 	var id = "video-fps-increase";
+	var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 	$("#" + id).hover(
 		function () {
-			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
 				'<source src="videos/video-fps-increase-1.mp4" type="video/mp4">' +
 				'</video>';
 		},
 		function () {
-			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 			imageVideo.innerHTML = '<img src="images/video-fps-increase-preview.png" alt="" />';
 		}
 	);
@@ -163,16 +160,24 @@ $(function () {
 // INDEX: OpenGL Projects
 $(function () {
 	var id = "opengl-projects";
+	var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 	$("#" + id).hover(
 		function () {
-			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
 				'<source src="videos/solar-system-1.mp4" type="video/mp4">' +
 				'</video>';
 		},
 		function () {
-			var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
 			imageVideo.innerHTML = '<img src="images/solar-system-preview.png" alt="" />';
 		}
 	);
+});
+
+$(function () {
+	if (window.matchMedia("(pointer: coarse)").matches) {
+		console.log("### On touchscreen device!");
+	}
+	else {
+		console.log("### On PC!");
+	}
 });
