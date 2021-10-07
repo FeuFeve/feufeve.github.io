@@ -125,6 +125,7 @@
 })(jQuery);
 
 
+// Images and videos on index main projects
 var projects = [
 	[
 		"terogue",
@@ -162,4 +163,12 @@ $(function () {
 			);
 		}
 	});
+});
+
+
+// Back to top button smooth scrolling
+$(function() {
+	document.getElementById("back-to-top-button").onclick = function() {
+		window.scrollTo({top: 0, behavior: 'smooth'});
+	};
 });

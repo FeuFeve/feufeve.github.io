@@ -18,16 +18,21 @@
   font-size: 1.25em !important;
 }
 
+@media screen and (max-width: 1280px) {
+  .custom-name {
+    font-size: 1.1em !important;
+  }
+}
+
 @media screen and (max-width: 738px) {
   .custom-name {
-    font-size: 1em !important;
+    font-size: 0.9em !important;
   }
 }
 
 @media screen and (max-width: 600px) {
   .custom-name {
-    left: 60% !important;
-    font-size: 0.8em !important;
+    font-size: 0.7em !important;
   }
 }
 
@@ -79,5 +84,22 @@
 }
 
 .custom-link {
-  color: #99BBDD;
+  color: #99bbdd;
+}
+
+#back-to-top-button {
+  cursor: pointer;
+  font-size: 0.9em !important;
+}
+
+@media screen and (max-width: 738px) {
+  #back-to-top-button {
+    font-size: 0.8em !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #back-to-top-button {
+    font-size: 0.7em !important;
+  }
 }
