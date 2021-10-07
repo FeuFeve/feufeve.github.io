@@ -125,63 +125,41 @@
 })(jQuery);
 
 
-// INDEX: TERogue
-$(function () {
-	var id = "terogue";
-	var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
-	$("#" + id).hover(
-		function () {
-			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
-				'<source src="videos/terogue-1.mp4" type="video/mp4">' +
-				'</video>';
-		},
-		function () {
-			imageVideo.innerHTML = '<img src="images/terogue-logo-2.png" alt="" />';
-		}
-	);
-});
-
-// INDEX: Video FPS Increase
-$(function () {
-	var id = "video-fps-increase";
-	var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
-	$("#" + id).hover(
-		function () {
-			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
-				'<source src="videos/video-fps-increase-1.mp4" type="video/mp4">' +
-				'</video>';
-		},
-		function () {
-			imageVideo.innerHTML = '<img src="images/video-fps-increase-preview.png" alt="" />';
-		}
-	);
-});
-
-// INDEX: OpenGL Projects
-$(function () {
-	var id = "opengl-projects";
-	var imageVideo = document.getElementById(id).getElementsByClassName("image")[0];
-	$("#" + id).hover(
-		function () {
-			imageVideo.innerHTML = '<video width="100%" style="margin-bottom: -3.1%;" autoplay loop muted playsinline>' +
-				'<source src="videos/solar-system-1.mp4" type="video/mp4">' +
-				'</video>';
-		},
-		function () {
-			imageVideo.innerHTML = '<img src="images/solar-system-preview.png" alt="" />';
-		}
-	);
-});
+var projects = [
+	[
+		"terogue",
+		'<img src="images/terogue-logo-2.png" alt="" />',
+		'<video width="100%" style="margin-bottom: -3.5%;" autoplay loop muted playsinline> <source src="videos/terogue-1.mp4" type="video/mp4"> </video>'
+	],
+	[
+		"video-fps-increase",
+		'<img src="images/video-fps-increase-preview.png" alt="" />',
+		'<video width="100%" style="margin-bottom: -3.5%;" autoplay loop muted playsinline> <source src="videos/video-fps-increase-1.mp4" type="video/mp4"> </video>'
+	],
+	[
+		"opengl-projects",
+		'<img src="images/solar-system-preview.png" alt="" />',
+		'<video width="100%" style="margin-bottom: -3.5%;" autoplay loop muted playsinline> <source src="videos/solar-system-1.mp4" type="video/mp4"> </video>'
+	]
+]
 
 $(function () {
-	var testDiv = document.getElementById("test-mobile");
-	testDiv.style.height = "10em";
-	if (window.matchMedia("(pointer: coarse)").matches) {
-		console.log("### On touchscreen device!");
-		testDiv.style.backgroundColor = "#00FF00";
-	}
-	else {
-		console.log("### On PC!");
-		testDiv.style.backgroundColor = "#FF0000";
-	}
+	projects.forEach(function (project) {
+		var id = project[0];
+		var imageHTML = project[1];
+		var videoHTML = project[2];
+		var projectVisuals = document.getElementById(id).getElementsByClassName("image")[0];
+
+		if (window.matchMedia("(pointer: coarse)").matches) { // On touchscreen device, 'hover' doesn't work as I'd like. Directly load the video and forget about the image
+			projectVisuals.innerHTML = videoHTML;
+		}
+		else { // On classic device (with mouse), play with the hover tag
+			$("#" + id).hover(
+				// Mouse hover = true, load video
+				function () { projectVisuals.innerHTML = videoHTML; },
+				// Mouse hover = false, load image
+				function () { projectVisuals.innerHTML = imageHTML; }
+			);
+		}
+	});
 });
