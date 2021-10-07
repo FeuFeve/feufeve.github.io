@@ -174,10 +174,14 @@ $(function () {
 });
 
 $(function () {
+	var testDiv = document.getElementById("test-mobile");
+	testDiv.style.height = "10em";
 	if (window.matchMedia("(pointer: coarse)").matches) {
 		console.log("### On touchscreen device!");
+		testDiv.style.backgroundColor = "#00FF00";
 	}
 	else {
 		console.log("### On PC!");
+		testDiv.style.backgroundColor = "#FF0000";
 	}
 });
